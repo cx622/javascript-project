@@ -2,7 +2,7 @@ const sections = document.getElementsByClassName('hidden');
 
 // Wallpaper randomizer
 const wallpapers = ["alternative","unsplash","1","2","3","4"];
-const rng = Math.round(Math.random() * wallpapers.length) - 1;
+const rng = Math.ceil(Math.random() * wallpapers.length) - 1;
 console.log(rng);
 document.getElementById("html").style.backgroundImage = `url('assets/wallpapers/${wallpapers[rng]}.jpg')`;
 

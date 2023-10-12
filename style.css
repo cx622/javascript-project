@@ -3,10 +3,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  overflow:clip;
   /* animation: 10s cubic-bezier(.25, 1, .30, 1) background forwards; */
-  overflow: clip;
 }
-
 body {
   display: flex;
   justify-content: space-between;
@@ -14,8 +13,8 @@ body {
   align-items: center;
   color: aliceblue;
   font-family: 'Ubuntu', sans-serif;
-
   height: 100%;
+  overflow: clip;
 }
 
 #Donttouch {
@@ -48,6 +47,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index:4;
 
 }
 
@@ -68,6 +68,7 @@ h2 {
   border-bottom-left-radius: 1%;
   border-bottom-right-radius: 1%;
   animation: 10s cubic-bezier(.25, 1, .30, 1) blurin forwards;
+  z-index:0;
 }
 
 #searchbar {
@@ -128,9 +129,17 @@ i {
   font-size: 40px;
   color: white;
   text-decoration: none;
-
+  
 }
-
+.links:nth-of-type(1) {
+  animation: slide-in 0.5s forwards;
+}
+.links:nth-of-type(2) {
+  animation: slide-in 0.7s forwards;
+}
+.links:nth-of-type(3) {
+  animation: slide-in 1s forwards;
+}
 .topIcons {
   display: flex;
   justify-content: flex-start;
@@ -173,6 +182,27 @@ i {
 
   }
 }
+@keyframes slide-in {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(50%) scale(10%);
+    opacity: 0;
+    
+  }
+  100% {
+    transform: translateY(0) scale(100%);
+    opacity: 1;
+  }
+}
 
 button {
   height: 50px;
@@ -200,18 +230,15 @@ button {
 #taskbar {
   height:7%;
   width:20%;
-  margin-top: 4%;
-  margin-bottom:1%;
+  margin-top: 2%;
+  margin-bottom:2%;
   border-radius:10px;
-  
+  background-color: rgba(70, 70, 70, 0.35);
+  animation: slide-up 1s forwards;
 }
 #taskbarIcons {
   height:80%;
   display:flex;
   padding: 1% 2%;
   justify-content: space-evenly;
-}
-#active {
-  background-color: rgba(70, 70, 70, 0.35);
-  
 }

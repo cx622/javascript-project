@@ -23,8 +23,14 @@ body {
   width: 70%;
   height: 70%;
   margin-top: 1%;
+  overflow:visible;
 }
-
+@media only screen and (max-width: 600px) {
+  #Donttouch {
+  width: 100%;
+  height: 76%;
+  }
+}
 p,
 h1,
 h2 {
@@ -88,6 +94,7 @@ h2 {
   cursor: text;
   margin-right: 50px;
   letter-spacing: 2px;
+  overflow:auto;
 }
 
 i:nth-child(-n+2) {
@@ -150,6 +157,103 @@ i {
   width: 60%;
 }
 
+
+
+
+
+
+.hidden {
+  display: none;
+
+}
+
+/* Nav section */
+
+#nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+/* Skills section */
+#skills {
+  height: 100%;
+}
+/* Fixes the blue whenever I add anchor tag */
+.white {
+  color:white;
+}
+/* Taskbar */
+#taskbar {
+  height:8%;
+  width:auto;
+  margin-top: 2%;
+  margin-bottom:2%;
+  border-radius:10px;
+  background-color: rgba(70, 70, 70, 0.35);
+  animation: slide-up 1s forwards;
+  align-items: center;
+  
+}
+
+#taskbarIcons {
+  height:auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:4%;
+  padding: 1% 4%;
+  
+  
+}
+#taskbarIcons1 {
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Taskbar Icons */
+.icons{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none; 
+  height: 50px;
+  width: 50px;
+}
+
+#taskbarIcons .taskbarIcons1:nth-child(1) .icons  {
+  background-image: url('assets/icons/files.png');
+  animation: slide-up-down 1.5s cubic-bezier(.31,.43,0,1.13) forwards;
+}
+/* 
+#taskbarIcons .taskbarIcons1:nth-child(5) .icons {
+  background-image: url('assets/icons/files.png');
+  animation: slide-up-down 2.0s cubic-bezier(.35,.16,.58,1.08) forwards;
+} */
+#taskbarIcons .taskbarIcons1:nth-child(2) .icons {
+  background-image: url('assets/icons/firefox.png');
+  animation: slide-up-down 2.5s cubic-bezier(.35,.16,.58,1.08) forwards;
+}
+#taskbarIcons .taskbarIcons1:nth-child(3) .icons {
+  background-image: url('assets/icons/minecraft.png');
+  animation: slide-up-down 3s cubic-bezier(.35,.16,.58,1.08) forwards;
+}
+#taskbarIcons .taskbarIcons1:nth-child(4) .icons  {
+  background-image: url('assets/icons/setting.png');
+  animation: slide-up-down 3.5s cubic-bezier(.35,.16,.58,1.08) forwards;
+}
+
+/* Hover animations */
+#taskbarIcons .taskbarIcons1:hover {
+  animation: slide-up-down 1.5s cubic-bezier(.35,.16,.58,1.08) infinite;
+}
+img {
+  height:95%;
+  width:75%;
+}
+
+/* Key frames */
 @keyframes window {
   0% {
     transform: scale(0%);
@@ -203,42 +307,15 @@ i {
     opacity: 1;
   }
 }
-
-button {
-  height: 50px;
-  width: 50px;
-}
-
-.hidden {
-  display: none;
-
-}
-
-#nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-}
-
-#skills {
-  height: 100%;
-}
-.white {
-  color:white;
-}
-#taskbar {
-  height:7%;
-  width:20%;
-  margin-top: 2%;
-  margin-bottom:2%;
-  border-radius:10px;
-  background-color: rgba(70, 70, 70, 0.35);
-  animation: slide-up 1s forwards;
-}
-#taskbarIcons {
-  height:80%;
-  display:flex;
-  padding: 1% 2%;
-  justify-content: space-evenly;
+@keyframes slide-up-down {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

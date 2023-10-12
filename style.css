@@ -1,27 +1,29 @@
-html {
-  background-image: url("alternative.jpg");
-  background-color: purple;
+#html {
+  background-color: black;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 100%;
-  width: 100%;
-  animation: 10s cubic-bezier(.25, 1, .30, 1) background forwards;
-  overflow: hidden;
+  background-size: cover;
+  height: 100vh;
+  /* animation: 10s cubic-bezier(.25, 1, .30, 1) background forwards; */
+  overflow: clip;
 }
 
 body {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   color: aliceblue;
   font-family: 'Ubuntu', sans-serif;
-  height: 90%;
+
+  height: 100%;
 }
 
 #Donttouch {
   align-items: center;
   animation: 1s cubic-bezier(.25, 1, .30, 1) window forwards;
-  width: 80%;
-  height: 90%;
+  width: 70%;
+  height: 70%;
+  margin-top: 1%;
 }
 
 p,
@@ -194,4 +196,22 @@ button {
 }
 .white {
   color:white;
+}
+#taskbar {
+  height:7%;
+  width:20%;
+  margin-top: 4%;
+  margin-bottom:1%;
+  border-radius:10px;
+  
+}
+#taskbarIcons {
+  height:80%;
+  display:flex;
+  padding: 1% 2%;
+  justify-content: space-evenly;
+}
+#active {
+  background-color: rgba(70, 70, 70, 0.35);
+  
 }

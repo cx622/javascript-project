@@ -1,4 +1,10 @@
-const elements = document.getElementsByClassName('hidden');
+const sections = document.getElementsByClassName('hidden');
+
+// Wallpaper randomizer
+const wallpapers = ["alternative","unsplash","1","2","3","4"];
+const rng = Math.round(Math.random() * wallpapers.length) - 1;
+console.log(rng);
+document.getElementById("html").style.backgroundImage = `url('assets/wallpapers/${wallpapers[rng]}.jpg')`;
 
 // Changes search bar to current url
 function searchbar() {
@@ -6,8 +12,8 @@ function searchbar() {
 }
 // Makes the section visible
 function loopin(pa) {
-  elements[0].style.display = 'none';
-  elements[pa].style.display = 'block';
+  sections[0].style.display = 'none';
+  sections[pa].style.display = 'block';
 }
 // Checks for the hashtag
 function hashtag() {
@@ -22,16 +28,16 @@ function hashtag() {
     loopin(3);
   }
   else {
-    elements[0].style.display = '';
+    sections[0].style.display = '';
   }
 }
 // Fixes a weird bug when going back a page
 function idk() {
-  elements[0].style.display = 'none';
-  elements[1].style.display = 'none';
-  elements[2].style.display = 'none';
-  elements[3].style.display = 'none';
-  handleHashChange();
+  sections[0].style.display = 'none';
+  sections[1].style.display = 'none';
+  sections[2].style.display = 'none';
+  sections[3].style.display = 'none';
+  hashtag();
 }
 // Event Listeners
 document.addEventListener("DOMContentLoaded", hashtag); window.addEventListener('popstate', idk);

@@ -35,11 +35,15 @@ body {
   margin-top: 1%;
   overflow:visible;
 }
+/* Smol screens styling here */
 @media only screen and (max-width: 600px) {
   #Donttouch {
   width: 100%;
   height: 76%;
   margin-top:2%;
+  }
+  #page {
+    overflow:clip;
   }
   #nav {
     flex-direction: column;
@@ -58,7 +62,15 @@ body {
     height: 100vh;
     width:90vw;
   }
-  
+  #middleIcons {
+    width: 80%;
+  }
+  #searchbar {
+    width: 90vw;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }
 p,
 h1,
@@ -122,9 +134,8 @@ h2 {
   opacity: 1;
   padding-left: 14px;
   cursor: text;
-  margin-right: 50px;
   letter-spacing: 2px;
-  overflow:auto;
+  overflow:hidden;
 }
 
 i:nth-child(-n+2) {
@@ -135,9 +146,6 @@ i:nth-child(3) {
   margin-left: 10px;
 }
 
-#last-icon {
-  margin-left: 50px;
-}
 
 i {
   cursor: pointer;
@@ -169,13 +177,13 @@ i {
   
 }
 .links:nth-of-type(1) {
-  animation: slide-in 1.5s forwards;
+  animation: slide-right 1.5s forwards;
 }
 .links:nth-of-type(2) {
-  animation: slide-in 2s forwards;
+  animation: slide-right 2s forwards;
 }
 .links:nth-of-type(3) {
-  animation: slide-in 3s forwards;
+  animation: slide-right 3s forwards;
 }
 .links:hover {
   text-decoration:line-through !important;
@@ -188,6 +196,8 @@ i {
 
 #middleIcons {
   width: 60%;
+  display:flex;
+  justify-content: flex-start;
 }
 
 
@@ -212,17 +222,19 @@ hr {
 }
 #nav div:nth-child(1) {
   margin-bottom: 2%;
-  width:40%;
+  width:45vw;
 }
 #nav div:nth-child(2) {
-  width:60%;
+  width:55vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
   letter-spacing: 2px;
   line-height: 200%;
 }
-
+#nav div img {
+  animation: slide-left 3s forwards;
+}
 /* Skills section */
 #skills {
   height: 100%;
@@ -334,9 +346,22 @@ img {
 
   }
 }
-@keyframes slide-in {
+@keyframes slide-right {
   0% {
     transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  30% {
     opacity: 0;
   }
   100% {

@@ -1,11 +1,12 @@
 html {
   background-color: black;
-  
+
   height: 100vh;
-  overflow:clip;
-  
+  overflow: clip;
+
   /* animation: 10s cubic-bezier(.25, 1, .30, 1) background forwards; */
 }
+
 body {
   display: flex;
   justify-content: space-between;
@@ -16,70 +17,78 @@ body {
   height: 100%;
   overflow: clip;
 }
+
 #html {
   background-repeat: no-repeat;
   background-size: cover;
-  height:100%;
-  width:100%;
-  animation: kenburns-bottom 35s ease-out both;
+  height: 100%;
+  width: 100%;
+  animation: kenburns-bottom 50s ease-in-out infinite;
   z-index: -1;
   position: fixed;
-  animation-delay: 3s;
-  
+
 }
+
 #Donttouch {
   align-items: center;
   animation: 1s cubic-bezier(.25, 1, .30, 1) window forwards;
   width: 70%;
   height: 70%;
   margin-top: 1%;
-  overflow:visible;
+  overflow: visible;
 }
+
 /* Smol screens styling here */
 @media only screen and (max-width: 600px) {
   #Donttouch {
-  width: 100%;
-  height: 76%;
-  margin-top:2%;
+    width: 100%;
+    height: 76%;
+    margin-top: 2%;
   }
-  #page {
-    overflow:clip;
-  }
+
   #nav {
     flex-direction: column;
-    overflow:scroll;
+    overflow: scroll;
     align-items: center;
-    padding:0;
+    padding: 0;
   }
-  
+
   #nav div {
-    display:flex;
+    display: flex;
     justify-content: center;
   }
+
   #nav div img {
-    margin-top:50vh;
-    margin-bottom:10vh;
+    margin-top: 50vh;
+    margin-bottom: 10vh;
     height: 100vh;
-    width:90vw;
+    width: 90vw;
   }
   #middleIcons {
     width: 80%;
   }
+
   #searchbar {
     width: 90vw;
   }
-  *::-webkit-scrollbar {
-    display: none;
-  }
+  
 }
+/* Smol screen responsive styles end here */
+
 p,
 h1,
 h2 {
   margin: 0;
 }
-
+#tabs {
+  height:30px;
+  display:flex;
+  justify-content: space-between;
+  background-color: rgba(2, 2, 2, 0.70);
+  width:100%;
+}
 #box {
-  height: 30px;
+  height: 100%;
   clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%);
   display: flex;
   justify-content: flex-start;
@@ -88,35 +97,45 @@ h2 {
   width: 20%;
 
 }
-
+#top-rightIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding:5px;
+}
 #topbar {
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index:4;
+  z-index: 4;
 
 }
 
 .thingy {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(16px);
   margin: 0;
   width: 100%;
-  background-color: rgba(30, 31, 34, 0.35);
+  background-color: rgba(42, 42, 42, 0.70)
+  /* background-color: #2B2D31; */
 
 }
 
 #page {
   height: 100%;
-  background-color: rgba(30, 31, 34, 0.75);
+  background-color: rgba(2, 2, 2, 0.70);
+  /* background-color: rgba(46, 48, 53, 1); */
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   /* box-shadow: 5px 10px 50px black; */
   border-bottom-left-radius: 1%;
   border-bottom-right-radius: 1%;
-  animation: 10s cubic-bezier(.25, 1, .30, 1) blurin forwards;
-  z-index:0;
-  
+  animation: 4s ease blurin forwards;
+  animation-delay: 0.5s;
+  z-index: 0;
+  /* border:0.03px solid rgba(46, 48, 53, 1);
+  border-top: 0px; */
+
 }
 
 #searchbar {
@@ -135,7 +154,7 @@ h2 {
   padding-left: 14px;
   cursor: text;
   letter-spacing: 2px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 i:nth-child(-n+2) {
@@ -174,20 +193,9 @@ i {
   font-size: 25px;
   color: white;
   text-decoration: none;
-  
+
 }
-.links:nth-of-type(1) {
-  animation: slide-right 1.5s forwards;
-}
-.links:nth-of-type(2) {
-  animation: slide-right 2s forwards;
-}
-.links:nth-of-type(3) {
-  animation: slide-right 3s forwards;
-}
-.links:hover {
-  text-decoration:line-through !important;
-}
+
 .topIcons {
   display: flex;
   justify-content: flex-start;
@@ -196,13 +204,17 @@ i {
 
 #middleIcons {
   width: 60%;
-  display:flex;
+  display: flex;
   justify-content: flex-start;
 }
 
 
-
-
+#page {
+  overflow: clip;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
 
 /* .hidden is important for the sections */
 .hidden {
@@ -212,6 +224,7 @@ i {
 hr {
   width: 30%;
 }
+
 /* Nav section */
 
 #nav {
@@ -219,98 +232,121 @@ hr {
   justify-content: space-evenly;
   height: 100%;
   padding: 2% 2%;
+  overflow: scroll;
 }
+
 #nav div:nth-child(1) {
   margin-bottom: 2%;
-  width:45vw;
+  width: 40vw;
 }
+
 #nav div:nth-child(2) {
-  width:55vw;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   letter-spacing: 2px;
   line-height: 200%;
+  animation: slide-right 1s ease forwards;
+  animation-delay:0.3s;
+  opacity: 0%;
 }
+
 #nav div img {
-  animation: slide-left 3s forwards;
+  animation: slide-left 1s ease forwards;
+  animation-delay:0.3s;
+  opacity: 0%;
+}
+
+.links:hover {
+  text-decoration: dotted;
 }
 /* Skills section */
 #skills {
   height: 100%;
 }
+
 /* Fixes the blue whenever I add anchor tag */
 .white {
-  color:white;
+  color: white;
 }
+
 /* Taskbar */
 #taskbar {
-  height:8%;
-  width:auto;
+  height: 8%;
+  width: auto;
   margin-top: 2%;
-  margin-bottom:2%;
-  border-radius:10px;
-  background-color: rgba(70, 70, 70, 0.35);
+  margin-bottom: 2%;
+  border-radius: 10px;
+  background-color: rgba(100, 100, 100, 0.05);
   animation: slide-up 1s forwards;
   align-items: center;
-  
+
 }
 
 #taskbarIcons {
-  height:auto;
+  height: auto;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap:4%;
+  gap: 4%;
   padding: 1% 4%;
-  
-  
+
+
 }
+
 #taskbarIcons1 {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-content: center;
 }
 
 /* Taskbar Icons */
-.icons{
+.icons {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
-  border: none; 
+  border: none;
   height: 50px;
   width: 50px;
 }
 
-#taskbarIcons .taskbarIcons1:nth-child(1) .icons  {
+#taskbarIcons .taskbarIcons1:nth-child(1) .icons {
   background-image: url('assets/icons/files.png');
-  animation: slide-up-down 1.5s cubic-bezier(.31,.43,0,1.13) forwards;
+  animation: slide-up-down 0.5s ease forwards;
+  animation-delay: 0.5s;
 }
+
 /* 
 #taskbarIcons .taskbarIcons1:nth-child(5) .icons {
   background-image: url('assets/icons/files.png');
-  animation: slide-up-down 2.0s cubic-bezier(.35,.16,.58,1.08) forwards;
+  animation: slide-up-down 2.0s cubic-bezier(.17,.67,.63,.61) forwards;
 } */
 #taskbarIcons .taskbarIcons1:nth-child(2) .icons {
   background-image: url('assets/icons/firefox.png');
-  animation: slide-up-down 2.5s cubic-bezier(.35,.16,.58,1.08) forwards;
+  animation: slide-up-down 0.5s ease forwards;
+  animation-delay: 0.6s;
 }
+
 #taskbarIcons .taskbarIcons1:nth-child(3) .icons {
   background-image: url('assets/icons/minecraft.png');
-  animation: slide-up-down 3s cubic-bezier(.35,.16,.58,1.08) forwards;
+  animation: slide-up-down 0.5s ease forwards;
+  animation-delay: 0.7s;
 }
-#taskbarIcons .taskbarIcons1:nth-child(4) .icons  {
+
+#taskbarIcons .taskbarIcons1:nth-child(4) .icons {
   background-image: url('assets/icons/setting.png');
-  animation: slide-up-down 3.5s cubic-bezier(.35,.16,.58,1.08) forwards;
+  animation: slide-up-down 0.5s ease forwards;
+  animation-delay: 0.8s;
 }
 
 /* Hover animations */
-#taskbarIcons .taskbarIcons1:hover {
-  animation: slide-up-down 1s cubic-bezier(.35,.16,.58,1.08) infinite;
+/* #taskbarIcons .taskbarIcons1:hover {
+  animation: slide-up-down 1s cubic-bezier(.35, .16, .58, 1.08) infinite;
 }
+ */
 img {
-  height:95%;
-  width:75%;
+  height: 95%;
+  width: 75%;
 }
 
 /* Key frames */
@@ -328,24 +364,15 @@ img {
 
 @keyframes blurin {
   0% {
-    box-shadow: 0px 0px 0px black;
+    box-shadow: 0px 0px 0px #1f1f1f;
   }
 
   100% {
-    box-shadow: 5px 10px 50px black;
+    box-shadow: 0px 10px 60px #1f1f1f;
   }
 }
 
-@keyframes background {
-  0% {
-    transform: scale(100%);
-  }
 
-  100% {
-    transform: scale(99%);
-
-  }
-}
 @keyframes slide-right {
   0% {
     transform: translateX(50%);
@@ -356,49 +383,60 @@ img {
     opacity: 1;
   }
 }
+
 @keyframes slide-left {
   0% {
     transform: translateX(-50%);
     opacity: 0;
   }
-  30% {
-    opacity: 0;
-  }
+
   100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
+
 @keyframes slide-up {
   0% {
     transform: translateY(50%) scale(10%);
     opacity: 0;
-    
+
   }
+
   100% {
     transform: translateY(0) scale(100%);
     opacity: 1;
   }
 }
+
 @keyframes slide-up-down {
   0% {
     transform: translateY(0%);
   }
+
   50% {
     transform: translateY(-50%);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0%);
   }
 }
+
 @keyframes kenburns-bottom {
   0% {
-    transform: scale(1) translateY(0);
-    transform-origin: 50% 84%;
+    transform: scale(1);
+    opacity: 0%;
+  }
+  5% {
+    opacity: 100%;
+  }
+  98% {
+    opacity: 100%;
   }
   100% {
-    transform: scale(1.25) translateY(15px);
-    transform-origin: bottom;
+    transform: scale(1.25);
+    opacity: 0%;
   }
 }

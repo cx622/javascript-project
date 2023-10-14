@@ -1,9 +1,9 @@
-#html {
+html {
   background-color: black;
-  background-repeat: no-repeat;
-  background-size: cover;
+  
   height: 100vh;
   overflow:clip;
+  
   /* animation: 10s cubic-bezier(.25, 1, .30, 1) background forwards; */
 }
 body {
@@ -16,7 +16,17 @@ body {
   height: 100%;
   overflow: clip;
 }
-
+#html {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100%;
+  width:100%;
+  animation: kenburns-bottom 35s ease-out both;
+  z-index: -1;
+  position: fixed;
+  animation-delay: 3s;
+  
+}
 #Donttouch {
   align-items: center;
   animation: 1s cubic-bezier(.25, 1, .30, 1) window forwards;
@@ -29,7 +39,26 @@ body {
   #Donttouch {
   width: 100%;
   height: 76%;
+  margin-top:2%;
   }
+  #nav {
+    flex-direction: column;
+    overflow:scroll;
+    align-items: center;
+    padding:0;
+  }
+  
+  #nav div {
+    display:flex;
+    justify-content: center;
+  }
+  #nav div img {
+    margin-top:50vh;
+    margin-bottom:10vh;
+    height: 100vh;
+    width:90vw;
+  }
+  
 }
 p,
 h1,
@@ -75,6 +104,7 @@ h2 {
   border-bottom-right-radius: 1%;
   animation: 10s cubic-bezier(.25, 1, .30, 1) blurin forwards;
   z-index:0;
+  
 }
 
 #searchbar {
@@ -133,19 +163,22 @@ i {
 
 .links {
   font-weight: 600;
-  font-size: 40px;
+  font-size: 25px;
   color: white;
   text-decoration: none;
   
 }
 .links:nth-of-type(1) {
-  animation: slide-in 0.5s forwards;
+  animation: slide-in 1.5s forwards;
 }
 .links:nth-of-type(2) {
-  animation: slide-in 0.7s forwards;
+  animation: slide-in 2s forwards;
 }
 .links:nth-of-type(3) {
-  animation: slide-in 1s forwards;
+  animation: slide-in 3s forwards;
+}
+.links:hover {
+  text-decoration:line-through !important;
 }
 .topIcons {
   display: flex;
@@ -161,20 +194,35 @@ i {
 
 
 
-
+/* .hidden is important for the sections */
 .hidden {
   display: none;
-
 }
 
+hr {
+  width: 30%;
+}
 /* Nav section */
 
 #nav {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 100%;
+  padding: 2% 2%;
 }
+#nav div:nth-child(1) {
+  margin-bottom: 2%;
+  width:40%;
+}
+#nav div:nth-child(2) {
+  width:60%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  letter-spacing: 2px;
+  line-height: 200%;
+}
+
 /* Skills section */
 #skills {
   height: 100%;
@@ -246,7 +294,7 @@ i {
 
 /* Hover animations */
 #taskbarIcons .taskbarIcons1:hover {
-  animation: slide-up-down 1.5s cubic-bezier(.35,.16,.58,1.08) infinite;
+  animation: slide-up-down 1s cubic-bezier(.35,.16,.58,1.08) infinite;
 }
 img {
   height:95%;
@@ -317,5 +365,15 @@ img {
   }
   100% {
     transform: translateY(0%);
+  }
+}
+@keyframes kenburns-bottom {
+  0% {
+    transform: scale(1) translateY(0);
+    transform-origin: 50% 84%;
+  }
+  100% {
+    transform: scale(1.25) translateY(15px);
+    transform-origin: bottom;
   }
 }

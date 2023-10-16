@@ -40,6 +40,8 @@ function idk() {
   hashtag();
 }
 // Event Listeners
-document.addEventListener("DOMContentLoaded", hashtag); window.addEventListener('popstate', idk);
+document.addEventListener("DOMContentLoaded", function() {
+  hashtag();
+}); window.addEventListener('popstate', idk);
 window.addEventListener('hashchange', hashtag);
 
